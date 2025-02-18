@@ -34,5 +34,7 @@ for node in nodes:
 
     nodes_json[node_name] = node_properties
 
-# Print the JSON structure
-print(json.dumps(nodes_json, indent=4))
+# Write the result to output.json
+with open("output.json", "w") as outfile:
+    json.dump(nodes_json, outfile, indent=4)
+    print("Done! Check output.json")
