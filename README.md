@@ -73,11 +73,13 @@ End Object
             },
             "self": {
                 "Direction": "Input",
-                "Type": "object"
+                "Type": "object",
+                "Origin": "/Script/CoreUObject.Class'/Script/Engine.KismetSystemLibrary'"
             },
             "WorldContextObject": {
                 "Direction": "Input",
-                "Type": "object"
+                "Type": "object",
+                "Origin": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'"
             },
             "InString": {
                 "Direction": "Input",
@@ -96,12 +98,13 @@ End Object
             },
             "TextColor": {
                 "Direction": "Input",
-                "Type": "struct",
-                "Value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)"
+                "Type": "linearcolor",
+                "Value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)",
+                "Origin": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'"
             },
             "Duration": {
                 "Direction": "Input",
-                "Type": "real",
+                "Type": "float",
                 "Value": "2.000000"
             },
             "Key": {
