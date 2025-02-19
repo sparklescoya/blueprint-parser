@@ -13,7 +13,7 @@ nodes_json = {}
 for node in nodes:
     node_name = intialize.get_node_name(node)
     node_pos = intialize.get_node_position(node)
-    node_pins = intialize.get_node_pins(node) # It outputs a list of tuples (pin_name, pin_direction, pin_type, pin_value)
+    node_pins = intialize.get_node_pins(node) # It outputs a list of tuples (pin_name, pin_direction, pin_type, pin_value, pin_origin)
 
     node_properties = {}
 
@@ -23,13 +23,17 @@ for node in nodes:
         node_properties["PositionY"] = node_pos_y
 
     node_properties["Pins"] = {}
-    for pin_name, pin_direction, pin_type, pin_value in node_pins:
+    for pin_name, pin_direction, pin_type, pin_value, pin_origin in node_pins:
         pin_data = {
             "Direction": pin_direction,
             "Type": pin_type
         }
         if pin_value != "":
             pin_data["Value"] = pin_value
+
+        if pin_origin != "":
+            pin_data["Origin"] = pin_origin
+
         node_properties["Pins"][pin_name] = pin_data
 
     nodes_json[node_name] = node_properties

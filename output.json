@@ -1,1 +1,77 @@
-[]
+{
+    "ReceiveBeginPlay": {
+        "PositionX": -240,
+        "PositionY": -544,
+        "Pins": {
+            "OutputDelegate": {
+                "Direction": "Output",
+                "Type": "delegate"
+            },
+            "then": {
+                "Direction": "Output",
+                "Type": "exec"
+            }
+        }
+    },
+    "PrintString": {
+        "PositionX": -48,
+        "PositionY": -541,
+        "Pins": {
+            "df": {
+                "Direction": "Input",
+                "Type": "struct",
+                "Value": "0, 0, 0",
+                "Origin": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'"
+            },
+            "execute": {
+                "Direction": "Input",
+                "Type": "exec"
+            },
+            "then": {
+                "Direction": "Output",
+                "Type": "exec"
+            },
+            "self": {
+                "Direction": "Input",
+                "Type": "object",
+                "Origin": "/Script/CoreUObject.Class'/Script/Engine.KismetSystemLibrary'"
+            },
+            "WorldContextObject": {
+                "Direction": "Input",
+                "Type": "object",
+                "Origin": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'"
+            },
+            "InString": {
+                "Direction": "Input",
+                "Type": "string",
+                "Value": "the value"
+            },
+            "bPrintToScreen": {
+                "Direction": "Input",
+                "Type": "bool",
+                "Value": "true"
+            },
+            "bPrintToLog": {
+                "Direction": "Input",
+                "Type": "bool",
+                "Value": "true"
+            },
+            "TextColor": {
+                "Direction": "Input",
+                "Type": "struct",
+                "Value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)",
+                "Origin": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'"
+            },
+            "Duration": {
+                "Direction": "Input",
+                "Type": "real",
+                "Value": "2.000000"
+            },
+            "Key": {
+                "Direction": "Input",
+                "Type": "name",
+                "Value": "None"
+            }
+        }
+    }
+}
