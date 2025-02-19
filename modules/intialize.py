@@ -47,7 +47,6 @@ def get_node_position(node):
         return (x, y)
     else:
         return None
-    
 
 def get_node_pins(node):
     # Find the line that contains: CustomProperties and output the following: PinName, Direction (may not be there, in that case we'll make it Input), PinType.PinCategory and DefaultValue (may not be there)
@@ -63,26 +62,46 @@ def get_node_pins(node):
                 if direction == "EGPD_Output":
                     direction = "Output"
             
-            # Pin Type
-            pin_type = line.split("PinType.PinCategory=")[1].split('"')[1]
- 
-            # Pin Value
-            pin_value = ""
-            match = re.search(r'DefaultValue="([^"]*)"', line)
-            if match:
-                pin_value = match.group(1)
-                
-            # Origin Value
+            # Pin Origin
             pin_origin = ""
             match = re.search(r'PinSubCategoryObject="([^"]*)"', line)
             if match:
                 pin_origin = match.group(1)
             
+            # Pin Subtype
+            match = re.search(r'PinType.PinSubCategory="([^"]*)"', line)
+            pin_subtype = ""
+            if match:
+                pin_subtype = match.group(1)
+            
+            # Pin Type
+            read_pin_type = line.split("PinType.PinCategory=")[1].split('"')[1]
+            pin_type = fix_pin_type(read_pin_type, pin_subtype, pin_origin)
+    
+            # Pin Value
+            pin_value = ""
+            match = re.search(r'DefaultValue="([^"]*)"', line)
+            if match:
+                pin_value = match.group(1)
+            
             pins.append((pin_name, direction, pin_type, pin_value, pin_origin))
     
     return pins  # Return an empty list if no pins are found
 
-def fix_pin_type(pin_type, pin_origin):
-    if pin_type == "StructProperty":
-        return pin_origin
+def fix_pin_type(pin_type, pin_subtype, pin_origin):
+    pin_origin_1 = pin_origin.split("'")[1] if pin_origin != "" else ""
+    pin_origin = pin_origin_1.split(".")[1] if pin_origin_1 != "" else ""
+    
+    if pin_origin == "Vector":
+        return "vector"
+    elif pin_origin == "LinearColor":
+        return "linearcolor"
+
+    
+    if pin_subtype == "":
+        return pin_type
+    else:
+        print(f"type: {pin_type}, subtype: {pin_subtype}")
+        return pin_subtype
+    
     return pin_type

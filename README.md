@@ -10,8 +10,6 @@ A Blueprint Parser made in Python
     - Pin Type *(Category)*
     - Pin Default Value
 
-> ⚠️ Note: For whatever reason Unreal treats Floats and several other types as "PinSubCategory" instead of "PinCategory", this will probably get fixed soon.
-
 ## Input:
 
 ```json

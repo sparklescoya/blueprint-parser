@@ -19,7 +19,7 @@
         "Pins": {
             "df": {
                 "Direction": "Input",
-                "Type": "struct",
+                "Type": "vector",
                 "Value": "0, 0, 0",
                 "Origin": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'"
             },
@@ -58,13 +58,13 @@
             },
             "TextColor": {
                 "Direction": "Input",
-                "Type": "struct",
+                "Type": "linearcolor",
                 "Value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)",
                 "Origin": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'"
             },
             "Duration": {
                 "Direction": "Input",
-                "Type": "real",
+                "Type": "float",
                 "Value": "2.000000"
             },
             "Key": {
