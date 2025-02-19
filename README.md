@@ -12,7 +12,7 @@ A Blueprint Parser made in Python
 
 ## Input:
 
-```json
+```
 Begin Object Class=/Script/BlueprintGraph.K2Node_Event Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/bp/grass.grass:EventGraph.K2Node_Event_0'"
    EventReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveBeginPlay")
    bOverrideFunction=True
