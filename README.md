@@ -1,5 +1,7 @@
 # Blueprint Parser
-A Blueprint Parser made in Python
+A Blueprint Parser made in Python.
+
+Inputs raw Blueprint Code copied directly from Unreal Engine and converts it to json.
 
 ## Features:
 - Node Names
